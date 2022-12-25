@@ -12,6 +12,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
+      - name: Change wrapper permissions
+        run: chmod +x ./mvnw
       - name: Publish package
         env:
           JRELEASER_NEXUS2_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
