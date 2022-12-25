@@ -1,6 +1,6 @@
 name: Check code
 run-name: ${{ github.actor }} is checking 🏍️
-on: [push]
+on: [ push ]
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -14,9 +14,3 @@ jobs:
 
       - name: Check lint
         run: mvn clean test
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
