@@ -1,4 +1,4 @@
-package com.cafeteru.validatorLib.validators;
+package io.github.cafeteru.validator_lib;
 
 import lombok.AllArgsConstructor;
 
