@@ -1,4 +1,4 @@
-package com.cafeteru.validatorLib.validators;
+package io.github.cafeteru.validator_lib;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
