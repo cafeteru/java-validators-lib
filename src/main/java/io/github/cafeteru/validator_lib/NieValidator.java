@@ -5,7 +5,7 @@ import java.util.Objects;
 import lombok.AllArgsConstructor;
 
 /**
- * Validate that a text has the correct form of an NIE
+ * Validate a text has the correct form of an NIE
  */
 @AllArgsConstructor
 public class NieValidator implements Validator {

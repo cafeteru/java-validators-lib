@@ -5,7 +5,7 @@ import java.util.Objects;
 import lombok.AllArgsConstructor;
 
 /**
- * Validate that a text has the correct form of an DNI
+ * Validate a text has the correct form of an DNI
  */
 @AllArgsConstructor
 public class DniValidator implements Validator {

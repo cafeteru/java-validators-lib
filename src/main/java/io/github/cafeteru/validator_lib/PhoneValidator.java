@@ -6,19 +6,19 @@ import java.util.regex.Pattern;
 import lombok.AllArgsConstructor;
 
 /**
- * Validate that a text has the correct form of an DNI
+ * Validate a text has the correct form of a phone
  */
 @AllArgsConstructor
 public class PhoneValidator implements Validator {
-    private String value;
+    private String phone;
 
     @Override
     public boolean isValid() {
-        if (Objects.isNull(value)) {
+        if (Objects.nonNull(phone)) {
             return true;
         }
         var pattern = Pattern.compile("^[679]\\d{8}$");
-        var mather = pattern.matcher(value);
+        var mather = pattern.matcher(phone);
         return mather.find();
     }
 }
