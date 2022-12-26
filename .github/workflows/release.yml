@@ -2,9 +2,10 @@ name: Publish package to the Maven Central Repository
 run-name: Publishing new version of the lib
 on:
   push:
-    branches: [ "master" ]
-  tags-ignore:
-    - '**'
+    branches:
+    - 'master' 
+    tags-ignore:
+      - '**'
 jobs:
   publish:
     runs-on: ubuntu-latest
