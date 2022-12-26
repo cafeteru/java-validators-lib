@@ -14,7 +14,7 @@ public class PhoneValidator implements Validator {
 
     @Override
     public boolean isValid() {
-        if (Objects.nonNull(phone)) {
+        if (Objects.isNull(phone)) {
             return true;
         }
         var pattern = Pattern.compile("^[679]\\d{8}$");
