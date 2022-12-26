@@ -1,5 +1,6 @@
-package io.github.cafeteru.validator_lib;
+package io.github.cafeteru.validator_lib.impl;
 
+import io.github.cafeteru.validator_lib.Validator;
 import lombok.AllArgsConstructor;
 
 import java.util.Objects;

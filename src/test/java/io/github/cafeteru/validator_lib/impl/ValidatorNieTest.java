@@ -1,4 +1,4 @@
-package io.github.cafeteru.validator_lib;
+package io.github.cafeteru.validator_lib.impl;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,41 +7,40 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import io.github.cafeteru.validator_lib.impl.ValidatorNie;
 
 /**
- * Check class ValidatorDni
+ * Check class ValidatorNie
  */
-class ValidatorDniTest {
+class ValidatorNieTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
-        "14892253Y",
-        "37468912A",
-        "19484773R",
-        "66690812N",
-        "14718986K"
+        "Z1854217P",
+        "Y1387672G",
+        "Y8331424X",
+        "X3233633V"
     })
-    void validData(String dni) {
-        var validator = new ValidatorDni(dni);
+    void validData(String nie) {
+        var validator = new ValidatorNie(nie);
         assertTrue(validator.isValid());
     }
 
     @Test
     void nullData() {
-        var validator = new ValidatorDni(null);
+        var validator = new ValidatorNie(null);
         assertTrue(validator.isValid());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {
-        "6069263B",
+        "Y050166T",
         "",
-        "60692Z63B",
-        "584654383",
-        "58465438S"
+        "X0501662",
+        "1050Y662T"
     })
-    void invalidData(String dni) {
-        var validator = new ValidatorDni(dni);
+    void invalidData(String nie) {
+        var validator = new ValidatorNie(nie);
         assertFalse(validator.isValid());
     }
 }
