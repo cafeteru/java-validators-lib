@@ -1,15 +1,14 @@
-package io.github.cafeteru.validator_lib.impl;
-
-import io.github.cafeteru.validator_lib.Validator;
-import lombok.AllArgsConstructor;
+package io.github.cafeteru.validator_lib;
 
 import java.util.Objects;
 
+import lombok.AllArgsConstructor;
+
 /**
- * Validate that a text has the correct form of an DNI
+ * Validate a text has the correct form of an DNI
  */
 @AllArgsConstructor
-public class ValidatorDni implements Validator {
+public class DniValidator implements Validator {
     private static final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKET";
     private static final int SIZE = 9;
 
