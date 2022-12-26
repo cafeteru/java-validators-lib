@@ -1,5 +1,5 @@
 name: Check code
-run-name: ${{ github.actor }} is checking 🏍️
+run-name: ${{ github.actor }} is executing test and checking cobertura 🏍️
 on: [ push ]
 jobs:
   publish:
@@ -12,10 +12,9 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Check lint
-        run: mvn clean test
+        run: mvn clean package
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          directory: ./backend/
           fail_ci_if_error: true
+          verbose: true
