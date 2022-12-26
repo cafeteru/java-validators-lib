@@ -1,6 +1,11 @@
 name: Check code
 run-name: ${{ github.actor }} is executing test and checking cobertura 🏍️
-on: [ push ]
+on:
+  push:
+    branches:
+    - '**' 
+    tags-ignore:
+    - '**'
 jobs:
   publish:
     runs-on: ubuntu-latest
