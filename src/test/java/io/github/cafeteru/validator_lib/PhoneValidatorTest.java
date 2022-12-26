@@ -1,4 +1,4 @@
-package io.github.cafeteru.validator_lib.impl;
+package io.github.cafeteru.validator_lib;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import io.github.cafeteru.validator_lib.impl.ValidatorPhone;
+import io.github.cafeteru.validator_lib.PhoneValidator;
 
 /**
  * Check class ValidatorPhone
  */
-class ValidatorPhoneTest {
+class PhoneValidatorTest {
 
     /**
      * Checks the functionality with valid data
@@ -24,7 +24,7 @@ class ValidatorPhoneTest {
         "925789535",
     })
     void validData(String phone) {
-        var validator = new ValidatorPhone(phone);
+        var validator = new PhoneValidator(phone);
         assertTrue(validator.isValid());
     }
 
@@ -33,7 +33,7 @@ class ValidatorPhoneTest {
      */
     @Test
     void nullData() {
-        var validator = new ValidatorPhone(null);
+        var validator = new PhoneValidator(null);
         assertTrue(validator.isValid());
     }
 
@@ -48,7 +48,7 @@ class ValidatorPhoneTest {
         ""
     })
     void invalidData(String phone) {
-        var validator = new ValidatorPhone(phone);
+        var validator = new PhoneValidator(phone);
         assertFalse(validator.isValid());
     }
 }

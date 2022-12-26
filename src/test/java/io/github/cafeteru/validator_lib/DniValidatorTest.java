@@ -1,4 +1,4 @@
-package io.github.cafeteru.validator_lib.impl;
+package io.github.cafeteru.validator_lib;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,13 +7,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import io.github.cafeteru.validator_lib.impl.ValidatorDni;
+import io.github.cafeteru.validator_lib.DniValidator;
 
 
 /**
  * Check class ValidatorDni
  */
-class ValidatorDniTest {
+class DniValidatorTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
@@ -24,13 +24,13 @@ class ValidatorDniTest {
         "14718986K"
     })
     void validData(String dni) {
-        var validator = new ValidatorDni(dni);
+        var validator = new DniValidator(dni);
         assertTrue(validator.isValid());
     }
 
     @Test
     void nullData() {
-        var validator = new ValidatorDni(null);
+        var validator = new DniValidator(null);
         assertTrue(validator.isValid());
     }
 
@@ -43,7 +43,7 @@ class ValidatorDniTest {
         "58465438S"
     })
     void invalidData(String dni) {
-        var validator = new ValidatorDni(dni);
+        var validator = new DniValidator(dni);
         assertFalse(validator.isValid());
     }
 }

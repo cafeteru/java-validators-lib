@@ -1,4 +1,4 @@
-package io.github.cafeteru.validator_lib.impl;
+package io.github.cafeteru.validator_lib;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import io.github.cafeteru.validator_lib.impl.ValidatorNie;
+import io.github.cafeteru.validator_lib.NieValidator;
 
 /**
  * Check class ValidatorNie
  */
-class ValidatorNieTest {
+class NieValidatorTest {
 
     @ParameterizedTest
     @ValueSource(strings = {
@@ -22,13 +22,13 @@ class ValidatorNieTest {
         "X3233633V"
     })
     void validData(String nie) {
-        var validator = new ValidatorNie(nie);
+        var validator = new NieValidator(nie);
         assertTrue(validator.isValid());
     }
 
     @Test
     void nullData() {
-        var validator = new ValidatorNie(null);
+        var validator = new NieValidator(null);
         assertTrue(validator.isValid());
     }
 
@@ -40,7 +40,7 @@ class ValidatorNieTest {
         "1050Y662T"
     })
     void invalidData(String nie) {
-        var validator = new ValidatorNie(nie);
+        var validator = new NieValidator(nie);
         assertFalse(validator.isValid());
     }
 }
